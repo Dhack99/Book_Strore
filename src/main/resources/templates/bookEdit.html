@@ -9,10 +9,10 @@
 <body>
 <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
     <div class="container-fluid">
-        <a class="navbar-brand text-white" href="#">Book Store</a>
-<!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--            <span class="navbar-toggler-icon"></span>-->
-<!--        </button>-->
+        <a class="navbar-brand text-white" href="/">Book Store</a>
+        <!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">-->
+        <!--            <span class="navbar-toggler-icon"></span>-->
+        <!--        </button>-->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
@@ -32,13 +32,30 @@
     </div>
 </nav>
 
-<div class="container text-center my-5">
-    <h1>Welcome To New Book Store</h1>
-    <h6>Welcome to New Book Store, your ultimate destination for book lovers of all ages and interests. Whether you're searching for the latest bestsellers, timeless classics, or hidden gems from independent authors, we have something for everyone. Our carefully curated selection spans a wide range of genres, including fiction, non-fiction, mystery, romance, science fiction, fantasy, and more.</h6><br>
-    <h6> At New Book Store, we believe that every book has the power to inspire, educate, and entertain. Our easy-to-navigate online platform makes it simple to browse, discover, and purchase your next great read. Plus, with personalized recommendations and customer reviews, you can confidently explore new titles and authors that match your taste.</h6><br>
-    <img src="/image/bookStore.jpg" width="800">
+<div class="container my-5 p-4" style="border:1px solid black">
+    <h1 class="text-center">Edit Book Here</h1>
+    <form class="col-md-4 offset-md-4" th:action="@{/save}" method="post" th:object="${book}">
+
+        <input type="hidden" name="id" th:value="${book.id}"/>
+        <div class="mb-3">
+            <label for="name" class="form-label" >Name</label>
+            <input type="text" class="form-control" id="name" name="name" th:value="${book.name}">
+        </div>
+        <div class="mb-3">
+            <label for="author" class="form-label" >Author</label>
+            <input type="text" class="form-control" id="author" name="author" th:value="${book.author}">
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label" >Price</label>
+            <input type="text" class="form-control" id="price"  name="price" th:value="${book.price}">
+        </div>
+
+        <center><button type="submit" class="btn btn-primary ">Update</button> </center>
+    </form>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
+
+

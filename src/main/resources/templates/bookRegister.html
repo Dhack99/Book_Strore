@@ -24,7 +24,7 @@
                     <a class="nav-link text-white" href="available_books">Available Books</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">My Books</a>
+                    <a class="nav-link text-white" href="my_books">My Books</a>
                 </li>
             </ul>
         </div>
@@ -36,18 +36,18 @@
 
 <div class="container my-5 p-4" style="border:1px solid black">
     <h1 class="text-center">New Book Register</h1>
-    <form class="col-md-4 offset-md-4">
+    <form class="col-md-4 offset-md-4" th:action="@{/save}" method="post" >
         <div class="mb-3">
-            <label for="name" class="form-label" name="name">Name</label>
-            <input type="text" class="form-control" >
+            <label for="name" class="form-label" >Name</label>
+            <input type="text" class="form-control" id="name" name="name">
         </div>
         <div class="mb-3">
-            <label for="author" class="form-label" name="author">Author</label>
-            <input type="text" class="form-control" >
+            <label for="author" class="form-label" >Author</label>
+            <input type="text" class="form-control" id="author" name="author">
         </div>
         <div class="mb-3">
-            <label for="price" class="form-label" name="price">Price</label>
-            <input type="text" class="form-control" >
+            <label for="price" class="form-label" >Price</label>
+            <input type="text" class="form-control" id="price"  name="price">
         </div>
 
 <center><button type="submit" class="btn btn-primary ">Submit</button> </center>
